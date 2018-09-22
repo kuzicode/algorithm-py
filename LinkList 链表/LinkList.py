@@ -27,42 +27,47 @@ class LinkedList():
     def isEmpty(self):
         return self._head == None
 
-    # add在链表前端添加元素:O(1)
-    def add(self,value):
-        newnode = Node(value,None)    # create一个node（为了插进一个链表）
+
+    # add 在链表前端添加元素:O(1)
+    def addFirst(self,value):
+        newnode = Node(value,None)    # create一个Node，为了插进一个链表
         newnode.setNext(self._head)
         self._head = newnode
 
-    #append在链表尾部添加元素:O(n)
+
+    # append 在链表尾部添加元素:O(n)
     def append(self,value):
         newnode = Node(value)
         if self.isEmpty():
-            self._head = newnode   # 若为空表，将添加的元素设为第一个元素
+            self._head = newnode
         else:
-            current = self._head
-            while current.getNext() != None:
-                current = current.getNext()   # 遍历链表
-            current.setNext(newnode)   # 此时current为链表最后的元素
+            current = self._head   # current（当前元素）
+            while current.getNext() != None:  # 遍历链表
+                current = current.getNext()
+            current.setNext(newnode)  # 此时current为链表最后元素
 
-    # search检索元素是否在链表中
+
+    # search 检索元素是否在链表中
     def search(self,value):
-        current=self._head
-        foundvalue = False
+        current = self._head
+        foundvalue = False   # 设置一个Flag来返回
         while current != None and not foundvalue:
             if current.getValue() == value:
                 foundvalue = True
             else:
-                current=current.getNext()
+                current = current.getNext()
         return foundvalue
 
-    # index索引元素在链表中的位置
+
+
+    # index 索引元素在链表中的位置
     def index(self,value):
         current = self._head
         count = 0
         found = None
         while current != None and not found:
             count += 1
-            if current.getValue()==value:
+            if current.getValue() == value:
                 found = True
             else:
                 current=current.getNext()
@@ -71,7 +76,8 @@ class LinkedList():
         else:
             raise ValueError ('%s is not in linkedlist'%value)
 
-    # remove删除链表中的某项元素
+
+    # remove  删除链表中的某项元素
     def remove(self,value):
         current = self._head
         pre = None
@@ -86,7 +92,8 @@ class LinkedList():
                 pre = current
                 current = current.getNext()
 
-    # insert链表中插入元素
+
+    # insert  链表中插入元素
     def insert(self,pos,value):
         if pos <= 1:
             self.add(value)
