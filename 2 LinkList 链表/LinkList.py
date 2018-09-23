@@ -81,13 +81,13 @@ class LinkedList():
     def remove(self,value):
         current = self._head
         pre = None
-        while current!=None:
+        while current != None:
             if current.getValue() == value:
                 if not pre:
                     self._head = current.getNext()
                 else:
                     pre.setNext(current.getNext())
-                break
+                    break
             else:
                 pre = current
                 current = current.getNext()
@@ -108,5 +108,9 @@ class LinkedList():
                 count += 1
                 pre = current
                 current = current.getNext()
-            pre.setNext(temp)
-            temp.setNext(current)
+                pre.setNext(temp)
+                temp.setNext(current)
+
+# 测试
+if __name__ == '__main__':
+    pass
