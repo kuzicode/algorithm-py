@@ -5,9 +5,9 @@ import ctypes
 class DynamicArray:
     
     def __init__ (self):
-        # Create an empty array
-        self._n = 0   # size
-        self._capacity = 10    # 先给个10
+        # 创建新的空数组
+        self._n = 0   # 数组长度给个0
+        self._capacity = 10    # 数组容量先给个10
         self._A = self._make_array(self._capacity)
         
     def __len__ (self):
@@ -16,15 +16,15 @@ class DynamicArray:
     def is_empty(self):
         return self._n == 0
     
-    # O(1)
+    # O(1) 通过index获取元素
     def __getitem__ (self, k):
         if not 0 <= k < self._n:
-            raise ValueError('invalid index') 
+            raise ValueError('索引无效，超出范围')
         return self._A[k]
        
     # O(1) 
     def append(self, obj):
-        if self._n == self._capacity:    # 首先要判断该容器是否放得下
+        if self._n == self._capacity:    # 首先判断该容器是否放得下
             self._resize(2 * self._capacity)
         self._A[self._n] = obj    
         self._n += 1
