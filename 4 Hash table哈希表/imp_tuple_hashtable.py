@@ -6,8 +6,10 @@
 改进版本：
 尽管get操作的增长依然是线性，但BetterMap类使得我们离哈希表更近一步：
 '''
+
+
 class BetterMap(object):
-      #利用LinearMap对象作为子表，建立更快的查询表
+      # 利用 LinearMap 对象作为子表，建立更快的查询表
     def __init__(self,n=100):
         self.maps = []          # 总表格
         for i in range(n):      # 根据n的大小建立n个空的子表

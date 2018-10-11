@@ -1,6 +1,6 @@
-'''
-动态数组实现队列并不用内置方法
-'''
+
+# 动态数组实现队列并不用内置方法
+
 class ArrayQueue:
     DEFAULT_CAPACITY = 10
     def __init__(self):
@@ -14,13 +14,13 @@ class ArrayQueue:
     def is_empty(self):
         return self._size == 0
     
-    #O(1)
+    # O(1)
     def first(self):
         if self.is_empty( ):
             raise ValueError( 'Queue is empty' )
         return self._data[self._front]
     
-    #O(1)
+    # O(1)
     def dequeue(self):
         if self.is_empty( ):
             raise ValueError( 'Queue is empty' )
@@ -30,10 +30,10 @@ class ArrayQueue:
         self._size -= 1
         return answer
     
-    #O(1)
+    # O(1)
     def enqueue(self, e):
         if self._size == len(self._data):
-            self._resize(2 * len(self._data)) #如果满了开拓两倍空间
+            self._resize(2 * len(self._data))  # 如果满了开拓两倍空间
         pos = (self._front + self._size) % len(self._data)
         self._data[pos] = e
         self._size += 1
@@ -53,3 +53,4 @@ class ArrayQueue:
             #print(str(i), ": ", str(pos))
             print(self._data[pos], end = " ")  
         print()
+

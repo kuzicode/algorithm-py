@@ -18,7 +18,7 @@ class HashMap(object):
         self.num += 1
          
     def resize(self):
-        #重排操作，添加新表, 注意重排需要线性的时间
+        # 重排操作，添加新表, 注意重排需要线性的时间
         # 先建立一个新的表,子表数 = 2 * 元素个数
         new_maps = BetterMap(self.num * 2)
          

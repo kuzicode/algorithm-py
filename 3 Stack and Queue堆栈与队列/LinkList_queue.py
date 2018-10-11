@@ -11,7 +11,7 @@ class LinkedQueue(object):
         self.tail = None
         self.count = 0  
     
-    #O(1)
+    # O(1)
     def enqueue(self, value):
         new_node = Node(value)
 
@@ -24,7 +24,7 @@ class LinkedQueue(object):
         self.tail = new_node
         self.count += 1
     
-    #O(1)
+    # O(1)
     def dequeue(self):
         if not self.is_empty():
             # print head to next node
