@@ -12,7 +12,7 @@ heapq.heappop（堆）
 
 import heapq 
 
-#1 heappush生成堆+ heappop把堆从小到大pop出来 
+# 1 heappush生成堆+ heappop把堆从小到大pop出来
 heap = []
 data = [1,3,5,7,9,2,4,6,8,0]
 for i in data:
@@ -24,7 +24,7 @@ while heap:
 	lis.append(heapq.heappop(heap))
 print(lis)
 
-#2 heapify生成堆+ heappop把堆从小到大pop出来 
+# 2 heapify生成堆+ heappop把堆从小到大pop出来
 data2 = [1,5,3,2,9,5]
 heapq.heapify(data2)
 print(data2)

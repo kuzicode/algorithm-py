@@ -1,12 +1,12 @@
-#算法时间复杂度为O（n^2）
+# 算法时间复杂度为O（n^2）
 '''
 为体现冒牌排序细节的不同，
 我写出简单的冒泡排序方法:bubble_sort_easy
 和改进后的冒泡排序方法:bubble_sort_imp
 '''
-#kumata's code
-#简单的冒泡排序方法
-#它的问题是当列表本来的顺序就是比较完好；仍会花费复杂的时间空间来排序
+# kumata's code
+# 简单的冒泡排序方法
+# 它的问题是当列表本来的顺序就是比较完好；仍会花费复杂的时间空间来排序
 
 def bubble_sort_easy(nums: list):
     for i in range(len(nums)):
@@ -15,6 +15,10 @@ def bubble_sort_easy(nums: list):
             if nums[j] > nums[j + 1]:
                 nums[j], nums[j + 1] = nums[j + 1], nums[j]   #交换
     return nums
+
+if __name__ == '__main__':
+    nums = [2,5,6,4,8,1,4]
+    print(bubble_sort_easy(nums))
 
 
 

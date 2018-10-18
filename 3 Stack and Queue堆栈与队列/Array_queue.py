@@ -28,6 +28,7 @@ class ArrayQueue:
         self._data[self._front] = None
         self._front = (self._front + 1) % len(self._data)
         self._size -= 1
+
         return answer
     
     # O(1)

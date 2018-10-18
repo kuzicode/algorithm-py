@@ -1,7 +1,6 @@
-'''
-二分查找树
-'''
-#构造节点
+
+# 二分查找树
+# 构造节点
 class Node(object):
     __slots__ = '_item' , '_lchild' , '_rchild'
 
@@ -17,10 +16,11 @@ BST 插入
 BST获取最小值与最大值
 BST 删除
 '''
-#搜索
+
+# 搜索
 # Get树元素的方法
     def get(self, key):
-        return self.__get(self._root, key);
+        return self.__get(self._root, key)
 
     def __get(self, node, key): # helper
         if (node is None):
@@ -32,7 +32,7 @@ BST 删除
         else:
             return self.__get(node._rchild, key)
 
-#插入
+# 插入
 # add元素的方法
     def add(self, value):
         self._root = self.__add(self._root, value)
@@ -49,7 +49,7 @@ BST 删除
                 node._rchild = self.__add(node._rchild, value)
         return node 
 
-#删除
+# 删除
 # remove树元素的方法
     def remove(self, key):
         self._root = self.__remove(self._root, key)
@@ -74,7 +74,7 @@ BST 删除
                 
         return node     
 
-#获取最大最小值（以下为获取最大值例子）
+# 获取最大最小值（以下为获取最大值例子）
 # get max 元素的方法
     def get_max(self):
         return self.__get_max(self._root)

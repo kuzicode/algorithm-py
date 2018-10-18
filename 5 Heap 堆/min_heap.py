@@ -1,16 +1,16 @@
-#该heap为min_heap，即根节点为最小值
+# 该heap为min_heap，即根节点为最小值
 class PriorityQueueBase:
-    #抽象基类为堆
+    # 抽象基类为堆
 
     class Item: 
-        #轻量级组合来存储堆项目
+        # 轻量级组合来存储堆项目
         __slots__ = '_key' , '_value'
 
         def __init__ (self, k, v):
             self._key = k
             self._value = v
 
-        def __lt__ (self, other):     #比较大小                                   
+        def __lt__ (self, other):     # 比较大小
             return self._key < other._key
 
         def is_empty(self):
@@ -31,7 +31,7 @@ class HeapPriorityQueue(PriorityQueueBase):
     def is_empty(self):
         return len(self) == 0  
 
-    def add(self, key, value):   #在后面加上然后加上
+    def add(self, key, value):   # 在后面加上然后加上
         self._data.append(self.Item(key, value)) 
         self._upheap(len(self._data) - 1)
         
@@ -67,13 +67,13 @@ class HeapPriorityQueue(PriorityQueueBase):
     def _swap(self, i, j):
         self._data[i], self._data[j] = self._data[j], self._data[i]
         
-    def _upheap(self, j):#往上交换
+    def _upheap(self, j): # 往上交换
         parent = self._parent(j) 
         if j > 0 and self._data[j] < self._data[parent]: 
             self._swap(j, parent) 
             self._upheap(parent) 
     
-    def _downheap(self, j):#往下交换，递归比较三个值
+    def _downheap(self, j): # 往下交换，递归比较三个值
         if self._has_left(j):
             left = self._left(j)
             small_child = left
