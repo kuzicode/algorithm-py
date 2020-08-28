@@ -1,6 +1,6 @@
 # 用Python来写数据结构与算法
 
-学习笔记可见博客园: https://www.cnblogs.com/kumata/category/1207633.html  
+学习笔记可见我的技术Blog: https://www.cnblogs.com/kumata/category/1207633.html  
 
 
 ## 数据结构
